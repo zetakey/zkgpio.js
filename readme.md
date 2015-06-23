@@ -45,10 +45,12 @@ It is part of <hw.js>[https://github.com/zetakey/hw.js] project that we are plan
 Install Procedure
 -----------------
 1.  download the package onto your Raspberry Pi
-    wget http://hwjs.zetakey.com/zkgpio/package/zkbrowser_3.3.1.0-1_armhf.deb
+
+        wget http://hwjs.zetakey.com/zkgpio/package/zkbrowser_3.3.1.0-1_armhf.deb
 
 2.  install the linux debian package
-    sudo dpkg -i zkbrowser_3.3.1.0-1_armhf.deb
+
+        sudo dpkg -i zkbrowser_3.3.1.0-1_armhf.deb
 
 Uninstall
 --------
@@ -66,13 +68,13 @@ Try local page
 --------------
     zkbrowser
 In the URL bar, type 
-    file:///gpio_input.html
+        file:///gpio_input.html
 
 Create your own stuff
 --------------------
 1.  Modify or create your own JS/HTML/CSS files (e.g index.html) under /zkbrowser/
 2.  in the URL bar, type
-    file:///index.html
+        file:///index.html
 
 Credentials
 -----------
