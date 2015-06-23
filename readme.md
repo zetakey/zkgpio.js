@@ -68,12 +68,14 @@ Try local page
 --------------
     zkbrowser
 In the URL bar, type 
+
         file:///gpio_input.html
 
 Create your own stuff
 --------------------
 1.  Modify or create your own JS/HTML/CSS files (e.g index.html) under /zkbrowser/
 2.  in the URL bar, type
+
         file:///index.html
 
 Credentials
