@@ -69,7 +69,7 @@ Try local page
     zkbrowser
 In the URL bar, type 
 
-        file:///gpio_input.html
+     file:///gpio_input.html
 
 Create your own stuff
 --------------------
