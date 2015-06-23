@@ -1,0 +1,54 @@
+<!doctype html>
+<!--
+/*
+ * gpio_output.html
+ *  Example to control Raspberry Pi Output using gpio.js.
+ *  It is part of <hw.js> solution from Zetakey
+ *  Author: Jack Wong <jack.wong@zetakey.com>
+ *	Copyright (c) 2015 Zetakey Solutions Limited
+ ************************************************************************
+ *
+ ***********************************************************************
+ */
+--> 
+
+<html manifest="gpio_test.manifest">
+<head>
+    <meta charset="utf-8">
+    <title>GPIO output sample</title>
+    <script src="zkgpio.js"></script>
+<script>
+var pi;
+
+function init(){
+  pi = zkgpio.plugin();
+  pi.setupGpio();
+  var rev = pi.piBoardRev();
+  document.getElementById('ver').innerHTML = rev;
+    
+};
+
+</script>
+
+</head>
+<body onload="init()">
+<h1>GPIO Output Sample using BCM GPIO 4</h1>
+<p>Version Number: <span id="ver"></span></p>
+<ol>
+  <li><button onclick="pi.setupGpio()">Setup Gpio</button></li>
+  <li><button onclick="pi.pinMode(4, zkgpio.OUTPUT)">Set the BCM 4(Jumpber pin 7) to output</button></li>
+  <li><button onclick="pi.digitalWrite(4, zkgpio.HIGH)">Go HIGH</button></li>
+  <li><button onclick="pi.digitalWrite(4, zkgpio.LOW)">Go LOW</button></li>
+</ol>
+
+<p>Circuit: </p>
+<ul>
+<li> BCM Pin 4 / Jumper Pin 7  - LED Anode (longer leg)</li>
+<li> LED Cathode (shorter leg) - 330 Resistor</li>
+<li> 330 Resistor              - GND</li>
+</ul>
+<p>Note: Please check the hardware connection and click in sequence or kill your board.</p>
+
+</body>
+
+</html>

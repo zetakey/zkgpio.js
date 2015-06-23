@@ -1,0 +1,54 @@
+<!doctype html>
+<!--
+/*
+ * gpio_input.html
+ *  Example to read Raspberry Pi Iutput using gpio.js by <hw.js>
+ *  It is part of <hw.js> solution from Zetakey
+ *  Author: Jack Wong <jack.wong@zetakey.com>
+ *	Copyright (c) 2015 Zetakey Solutions Limited
+ ************************************************************************
+ *
+ ***********************************************************************
+ */
+--> 
+
+<html manifest="gpio_test.manifest">
+<head>
+    <meta charset="utf-8">
+    <title>GPIO input sample</title>
+    <script src="zkgpio.js"></script>
+<script>
+var pi;
+
+function init(){
+  pi = zkgpio.plugin();
+  pi.setupGpio();
+  var rev = pi.piBoardRev();
+  document.getElementById('ver').innerHTML = rev;
+};
+
+</script>
+
+</head>
+<body onload="init()">
+  <h1>GPIO Input Sample using BCM GPIO 3</h1>
+<p>Version Number: <span id="ver"></span></p>
+
+<ol>
+  <li><button onclick="pi.setupGpio()">Setup Gpio</button></li>
+  <li><button onclick="pi.pinMode(3, zkgpio.INPUT)">Set the BCM 3 (jumper pin 5) to input</button></li>
+  <li><button onclick="document.getElementById('status').innerHTML = pi.digitalRead(3);">Check pin 4</button></li>
+</ol>
+<p>Pin Status: <span id="status"></span></p>
+
+<p>Circuit: </p>
+<ul>
+<li> BCM Pin 3 / Jumper Pin 5  - Button Pin 1</li>
+<li> Button Pin 3 - GND</li>
+<p>BCM Pin 3 is pull up internally to 3V3. When button pressed, it connects to GND</p>
+</ul>
+
+<p>Note: Please check the hardware connection and click in sequence or kill your board.</p>
+</body>
+
+</html>
